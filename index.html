@@ -15,7 +15,18 @@
 
     <img id="image2" src="./images/dice-6.jpg" alt="Dice Image" style="width:50px;height:50px;">
     <br /><br />
-    <p>
+    <p class="player" id="player1">
+        <span class="name">Player Name</span>
+        Your balance is $<span id="balance">5</span><br />
+        Number of turns <span id="turnCount">0</span>
+    </p>
+    <p class="player" id="player2">
+        <span class="name">Player Name</span>
+        Your balance is $<span id="balance">5</span><br />
+        Number of turns <span id="turnCount">0</span>
+    </p>
+    <p class="player" id="player3">
+        <span class="name">Player Name</span>
         Your balance is $<span id="balance">5</span><br />
         Number of turns <span id="turnCount">0</span>
     </p>
@@ -23,15 +34,13 @@
     <p>
         <span id="status"></span>
     </p>
-    
-<!--    LUANN:  I had to revised the line below, #30. The line used to read:
-                <button id="ButtonBet" type="button" onclick="buttonClicked()">Bet Now</button>  <br />
-                The onlick = ... was causing an error after converting to jQuery.-->
     <button id="ButtonBet" type="button">Bet Now</button>  <br />
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
+    <script
+			  src="https://code.jquery.com/jquery-3.3.1.slim.js"
+			  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
+			  crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
+    <script src="js/player.js"></script>
+    <script src="js/dice.js"></script>
 </body>
 </html>
