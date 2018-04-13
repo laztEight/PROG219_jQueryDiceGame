@@ -3,7 +3,7 @@
  */
 $(document).ready(function(){
 var player1 = new player('PlayerA');
-console.log(`player 1 is: ${player1}`);
+console.log(`player 1 is: ${player1.name}`);
 var player2 = new player('George');
 var player3 = new player('MaryAnne');
 var thePlayers = [player1, player2, player3];
