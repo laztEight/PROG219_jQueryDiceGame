@@ -23,7 +23,15 @@
     <p>
         <span id="status"></span>
     </p>
-    <button id="ButtonBet" type="button" onclick="buttonClicked()">Bet Now</button>  <br />
+    
+<!--    LUANN:  I had to revised the line below, #30. The line used to read:
+                <button id="ButtonBet" type="button" onclick="buttonClicked()">Bet Now</button>  <br />
+                The onlick = ... was causing an error after converting to jQuery.-->
+    <button id="ButtonBet" type="button">Bet Now</button>  <br />
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
     <script src="js/index.js"></script>
 </body>
 </html>
