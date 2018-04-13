@@ -1,6 +1,6 @@
 ﻿/**
  * Created by bcuser on 4/4/18.
- */
+ */ 
 $(document).ready(function(){
 var player1 = new player('PlayerA');
 // console.log(`player 1 is: ${player1.name}`);
