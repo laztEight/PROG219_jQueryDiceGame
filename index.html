@@ -9,7 +9,9 @@
 
 <body>
     <h2> The JavaScript Dice Game</h2>
-    <p> You start with $5, each round you either win or lose $1.</p>
+    <p> You each start with $5, each round you either win or lose $1.<br/>
+    <span id="playerUp">PlayerName</span>: Your up.</p>
+
     <img id="image1" src="./images/dice-1.jpg" alt="Dice Image" style="width:50px;height:50px;">
     &nbsp;&nbsp;&nbsp;&nbsp;
 
@@ -35,12 +37,10 @@
         <span id="status"></span>
     </p>
     <button id="ButtonBet" type="button">Bet Now</button>  <br />
-    <script
-			  src="https://code.jquery.com/jquery-3.3.1.slim.js"
-			  integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
-			  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/player.js"></script>
     <script src="js/dice.js"></script>
+    <script src="js/player.js"></script>   
 </body>
 </html>
