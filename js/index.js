@@ -2,10 +2,10 @@
  * Created by bcuser on 4/4/18.
  */
 $(document).ready(function(){
-var player1 = new player(playerA);
+var player1 = PlayerA;
 console.log(`player 1 is: ${player1}`);
-var player2 = new player(George);
-var player3 = new player(MaryAnn);
+var player2 = George;
+var player3 = MaryAnn;
 var thePlayers = [player1, player2, player3];
 var dice1;
 var dice2;
