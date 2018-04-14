@@ -70,20 +70,42 @@ $(".name").html(thePlayers[i].name); // sets
     // #5 of homework - when user balance reached 0, hide button and update game status   
     
     // if a player loses, their out of the game.  
-    
-    if(thePlayers[i].balance === 0){
-       $("#status").html("GAME OVER!");
-       /* for (let r = thePlayers.length-1; r--;) {
-            thePlayers.splice(r, 1);
-    }
-    console.log(`${thePlayers[i].name} removed`);*/
-}
 
+     // checking if players out of money      
+    if(thePlayers[i].balance === 0){
+        $("#balance").html(thePlayers[i].balance);
+       $("#status").html("GAME OVER!");
+
+//===========================================
+       /* Trying to move lines 83 to 95 into a function call removePlayer */
+//===========================================
+
+        //removePlayer();
+
+       console.log(`removeplayer function`);
+        console.log(thePlayers.length);
+        //removing the player from the array
+            if (thePlayers.indexOf(thePlayers[i]) != -1) {
+                thePlayers.splice(thePlayers.indexOf(thePlayers[i]), 1);
+                console.log(`remove player`);
+            }
+                else {
+                    console.log(`didn't remove player`);
+                }
+            console.log(thePlayers.length);
+            // if there is only one player left, it declares winner
+            if (thePlayers.length === 1) {
+                buttonBet.style.display = "none";
+                $("#status").html(`CONGRATS! ${thePlayers[0].name}YOU WON!`);
+            }
+        } 
+        
     
+
+
     // incrementing the aray iterator
     i++;
     console.log(`Array iterator is ${i}`);
-   // $(".nameUp").html(thePlayers[i].name);
    //buttonBet.style.display = "none";
     }); // end of buttonClicked function
 }); // end of jQuery document ready function
