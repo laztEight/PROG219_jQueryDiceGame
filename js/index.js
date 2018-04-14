@@ -69,15 +69,21 @@ $(".name").html(thePlayers[i].name); // sets
     // ====================================================================================
     // #5 of homework - when user balance reached 0, hide button and update game status   
     
-    // if a player loses, their out of the game.    
+    // if a player loses, their out of the game.  
+    
     if(thePlayers[i].balance === 0){
-        buttonBet.style.display = "none";
-        $("#status").html("GAME OVER!");
+       $("#status").html("GAME OVER!");
+       /* for (let r = thePlayers.length-1; r--;) {
+            thePlayers.splice(r, 1);
     }
+    console.log(`${thePlayers[i].name} removed`);*/
+}
+
     
     // incrementing the aray iterator
     i++;
     console.log(`Array iterator is ${i}`);
-    $(".nameUp").html(thePlayers[i].name);
+   // $(".nameUp").html(thePlayers[i].name);
+   //buttonBet.style.display = "none";
     }); // end of buttonClicked function
 }); // end of jQuery document ready function
