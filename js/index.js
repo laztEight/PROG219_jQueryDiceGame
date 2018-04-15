@@ -10,9 +10,7 @@ var dice1;
 var dice2;
 var i = 0;
 
-$(".nameUp").html(thePlayers[i].name); // this sets the start with who's play it is
-$(".name").html(thePlayers[i].name); // sets
-    
+  
     $("#ButtonBet").click(function(){
         // this resets the array iterator after each player has rolled once
         if (i > thePlayers.length-1){        
@@ -74,16 +72,8 @@ $(".name").html(thePlayers[i].name); // sets
      // checking if players out of money      
     if(thePlayers[i].balance === 0){
         $("#balance").html(thePlayers[i].balance);
-       $("#status").html("GAME OVER!");
+        $("#status").html("Your out!");
 
-//===========================================
-       /* Trying to move lines 83 to 95 into a function call removePlayer */
-//===========================================
-
-        //removePlayer();
-
-       console.log(`removeplayer function`);
-        console.log(thePlayers.length);
         //removing the player from the array
             if (thePlayers.indexOf(thePlayers[i]) != -1) {
                 thePlayers.splice(thePlayers.indexOf(thePlayers[i]), 1);
@@ -93,19 +83,14 @@ $(".name").html(thePlayers[i].name); // sets
                     console.log(`didn't remove player`);
                 }
             console.log(thePlayers.length);
-            // if there is only one player left, it declares winner
+            // if there is only one player left, it declares winner and hides button
             if (thePlayers.length === 1) {
-                buttonBet.style.display = "none";
-                $("#status").html(`CONGRATS! ${thePlayers[0].name}YOU WON!`);
+                $("#ButtonBet").hide();
+                $("#status").html(`CONGRATS! ${thePlayers[0].name}, YOU WON!`);
             }
         } 
-        
-    
-
-
     // incrementing the aray iterator
     i++;
     console.log(`Array iterator is ${i}`);
-   //buttonBet.style.display = "none";
     }); // end of buttonClicked function
 }); // end of jQuery document ready function
