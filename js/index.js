@@ -20,6 +20,9 @@ var i = 0;
         $("#name"+i).html(thePlayers[i].name);
             console.log(`Name of player: ${thePlayers[i].name}`);
 
+            $("#name0").html(thePlayers[0].name);
+
+
     // ====================================================================================
     // #1 of homework - calculate 2 random integers for the dice.
     
@@ -60,6 +63,8 @@ var i = 0;
     // #4 of homework - update $ balance and number of turns
       
     // setting object player balance and turn count properties
+ 
+
     $("#balance"+i).html(thePlayers[i].balance); 
     $("#turnCount"+i).html(++thePlayers[i].turnCount);
     console.log(`${thePlayers[i].name} balance is ${thePlayers[i].balance}`);
