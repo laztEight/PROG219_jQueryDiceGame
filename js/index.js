@@ -10,26 +10,36 @@ var dice1;
 var dice2;
 var i = 0;
 
-
-  
     $("#ButtonBet").click(function(){
         // this resets the array iterator after each player has rolled once
+
+        
         if (i > thePlayers.length-1){        
             i = 0;
         }
+        
+        if (thePlayers[i].balance != 0)
+            {
+                
+        // ----------------------------        
+        // Had to move the random number generator above the name.html - otherwise all rolls were exactly the same.
+        // ----------------------------        
+    dice1 = Math.floor(Math.random() * 6) + 1;
+    dice2 = Math.floor(Math.random() * 6) + 1;
+    console.log("---------------------------");
+    console.log("---------------------------");
+    console.log("This is dice 1: " + dice1);
+    console.log("This is dice 2: " + dice2);
+        
         $("#name"+i).html(thePlayers[i].name);
             console.log(`Name of player: ${thePlayers[i].name}`);
 
-            $("#name0").html(thePlayers[0].name);
+    // ----------------------------        
+    // What does this line do?
+    // -------------------------------
+        $("#name0").html(thePlayers[0].name);
 
 
-    // ====================================================================================
-    // #1 of homework - calculate 2 random integers for the dice.
-    
-    dice1 = Math.floor(Math.random() * 6) + 1;
-    dice2 = Math.floor(Math.random() * 6) + 1;
-    console.log("This is dice 1: " + dice1);
-    console.log("This is dice 2: " + dice2);
     
     // ====================================================================================
     // #2 of homework - change dice images based on their value when rolled.
@@ -78,23 +88,47 @@ var i = 0;
      // checking if players out of money      
     if(thePlayers[i].balance === 0){
         $("#balance").html(thePlayers[i].balance);
-        $("#status").html("Your out!");
+        $("#status").html("GAME OVER. Your out!");
+        
 
         //removing the player from the array
-            if (thePlayers.indexOf(thePlayers[i]) != -1) {
-                thePlayers.splice(thePlayers.indexOf(thePlayers[i]), 1);
-                console.log(`remove player`);
-            }
-                else {
-                    console.log(`didn't remove player`);
-                }
+//            if (thePlayers.indexOf(thePlayers[i]) != -1) {
+//                thePlayers.splice(thePlayers.indexOf(thePlayers[i]), 1);
+                
+                
+                // ----------------
+                // added this line to remove when they lose
+                // $("#name"+i).html(thePlayers[i].name).remove();
+//                
+//                console.log(`remove player`);
+//            }
+//                else {
+//                    console.log(`didn't remove player`);
+//                }
             console.log(thePlayers.length);
-            // if there is only one player left, it declares winner and hides button
-            if (thePlayers.length === 1) {
+//            if (thePlayers.length === 1) {
+//                $("#ButtonBet").hide();
+//                $("#status").html(`CONGRATS! ${thePlayers[0].name}, YOU WON!`);
+//            }
+                
+        
+        if(thePlayers[0].balance === 0 && thePlayers[1].balance === 0)
+            {
                 $("#ButtonBet").hide();
-                $("#status").html(`CONGRATS! ${thePlayers[0].name}, YOU WON!`);
+                $("#status").html("YOU WON!");
+            }
+        if(thePlayers[1].balance === 0 && thePlayers[2].balance === 0)
+            {
+                $("#ButtonBet").hide();
+                $("#status").html("YOU WON!");
+            }
+        if(thePlayers[2].balance === 0 && thePlayers[0].balance === 0)
+            {
+                $("#ButtonBet").hide();
+                $("#status").html("YOU WON!");
             }
         } 
+            }
     // incrementing the aray iterator
     i++;
     console.log(`Array iterator is ${i}`);
