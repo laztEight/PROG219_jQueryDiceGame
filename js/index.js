@@ -10,13 +10,14 @@ var dice1;
 var dice2;
 var i = 0;
 
+
   
     $("#ButtonBet").click(function(){
         // this resets the array iterator after each player has rolled once
         if (i > thePlayers.length-1){        
             i = 0;
         }
-        $(".name").html(thePlayers[i].name);
+        $("#name"+i).html(thePlayers[i].name);
             console.log(`Name of player: ${thePlayers[i].name}`);
 
     // ====================================================================================
@@ -59,8 +60,8 @@ var i = 0;
     // #4 of homework - update $ balance and number of turns
       
     // setting object player balance and turn count properties
-    $("#balance").html(thePlayers[i].balance); 
-    $("#turnCount").html(++thePlayers[i].turnCount);
+    $("#balance"+i).html(thePlayers[i].balance); 
+    $("#turnCount"+i).html(++thePlayers[i].turnCount);
     console.log(`${thePlayers[i].name} balance is ${thePlayers[i].balance}`);
     console.log(`${thePlayers[i].name} turn count is ${thePlayers[i].turnCount}`);
     
